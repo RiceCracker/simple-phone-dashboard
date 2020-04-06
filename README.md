@@ -4,7 +4,7 @@ A simple flask based REST-ful API and dashboard to display common phone data cra
 # Introduction
 This project crawls data from phones which support web interfaces supporting http-auth. The code is splitted into a REST-ful API written in flask handling the phone database and a dasboard based on CreativeTim's argon-dashboard: https://github.com/creativetimofficial/argon-dashboard. 
 
-Please keep in mind that this project is far from finished and is still work in progress and not optimized for production environments yet.
+Please keep in mind that this project is far from finished and is still work in progress and not optimized for production environments yet. There is no warranty provided.
 
 # How it works
 ## About phones
