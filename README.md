@@ -27,3 +27,5 @@ CreativeTim's Argon Dashboard provides a flask branch which is used in combinati
 ## On configuration
 The configuration of both API and dashboard can be achieved by modifying their respective config.py and configuration.py files.
 
+## On virtual environments
+Before anything can be run, virtual environments have to be set up for API and Argon Dashboard (https://github.com/app-generator/flask-argon-dashboard).
