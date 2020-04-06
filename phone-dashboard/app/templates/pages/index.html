@@ -1,0 +1,290 @@
+  <!-- Main content -->
+  <div class="main-content">
+
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Telefon Dashboard</a>
+        <!-- Form -->
+        <!--<form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+          <div class="form-group mb-0">
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+              </div>
+              <input class="form-control" placeholder="Search" type="text">
+            </div>
+          </div>
+        </form>-->
+        <!-- User -->
+      {% include 'includes/user-dropdown.html' %}
+
+      </div>
+    </nav>
+
+    <!-- Header -->
+    {% include 'includes/top-stats.html' %}
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+          <div class="card bg-gradient-default shadow">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-light ls-1 mb-1">Anrufe</h6>
+                  <h2 class="text-white mb-0">Überblick Monat</h2>
+                </div>
+                <div class="col">
+                  <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{{ overview_graph[0] }}' data-prefix="" data-suffix="">
+                      <a onclick="buttonClick()" id="callupdate" href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                        <span class="d-none d-md-block">Angenommen</span>
+                        <span class="d-md-none">A</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{{ overview_graph[2] }}' data-prefix="" data-suffix="">
+                      <a href="#" class="nav-link py-2 px-3 mr-2 mr-md-0" data-toggle="tab">
+                        <span class="d-none d-md-block">Verpasst</span>
+                        <span class="d-md-none">V</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{{ overview_graph[1] }}' data-prefix="" data-suffix="">
+                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                        <span class="d-none d-md-block">Gewählt</span>
+                        <span class="d-md-none">G</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="chart">
+                <!-- Chart wrapper -->
+                <canvas id="chart-sales" class="chart-canvas" data={{ overview_graph[0] }}></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-xl-4">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Anrufe</h6>
+                  <h2 class="mb-0">Gesamt</h2>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart --
+              <div class="chart">
+                <canvas id="chart-orders" class="chart-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="row mt-4">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+          <div class="card bg-gradient-default shadow">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-light ls-1 mb-1">Anrufe</h6>
+                  <h2 class="text-white mb-0">Überblick Woche</h2>
+                </div>
+                <div class="col">
+                  <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales2" data-update='{{ overview_graph[3] }}' data-prefix="" data-suffix="">
+                      <a onclick="buttonClick()" id="callupdate2" href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                        <span class="d-none d-md-block">Angenommen</span>
+                        <span class="d-md-none">A</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales2" data-update='{{ overview_graph[5] }}' data-prefix="" data-suffix="">
+                      <a href="#" class="nav-link py-2 px-3 mr-2 mr-md-0" data-toggle="tab">
+                        <span class="d-none d-md-block">Verpasst</span>
+                        <span class="d-md-none">V</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales2" data-update='{{ overview_graph[4] }}' data-prefix="" data-suffix="">
+                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                        <span class="d-none d-md-block">Gewählt</span>
+                        <span class="d-md-none">G</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="chart">
+                <!-- Chart wrapper -->
+                <canvas id="chart-sales2" class="chart-canvas" data={{ overview_graph[0] }}></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-xl-4">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Anrufe</h6>
+                  <h2 class="mb-0">Gesamt</h2>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart --
+              <div class="chart">
+                <canvas id="chart-orders" class="chart-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="row mt-4">
+        <div class="col-xl-4 mb-5 mb-xl-0">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Top angenommen</h3>
+                </div>
+                <!--<div class="col text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                </div>-->
+              </div>
+            </div>
+            <div class="table-responsive">
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Anzahl</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for phone in phone_tops['received'] %}
+                  <tr>
+                    <th scope="row">
+                      <a href="./phone/{{ phone[0] }}">{{ phone[0] }}</a>
+                    </th>
+                    <td>
+                      {{ phone[1] }}
+                    </td>
+                    <td>
+                      {{ phone[2] }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-5 mb-xl-0">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Top verpasst</h3>
+                </div>
+                <!--<div class="col text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                </div>-->
+              </div>
+            </div>
+            <div class="table-responsive">
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Anzahl</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for phone in phone_tops['missed'] %}
+                  <tr>
+                    <th scope="row">
+                      <a href="./phone/{{ phone[0] }}">{{ phone[0] }}</a>
+                    </th>
+                    <td>
+                      {{ phone[1] }}
+                    </td>
+                    <td>
+                      {{ phone[2] }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-5 mb-xl-0">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Top gewählt</h3>
+                </div>
+                <!--<div class="col text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                </div>-->
+              </div>
+            </div>
+            <div class="table-responsive">
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Anzahl</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for phone in phone_tops['dialed'] %}
+                  <tr>
+                    <th scope="row">
+                      <a href="./phone/{{ phone[0] }}">{{ phone[0] }}</a>
+                    </th>
+                    <td>
+                      {{ phone[1] }}
+                    </td>
+                    <td>
+                      {{ phone[2] }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'includes/footer.html' %}
+
+    </div>
+  </div>
+
+  <script>
+    // On mouse-over, execute myFunction
+    window.onload=function(){
+      document.getElementById("callupdate").click();
+      document.getElementById("callupdate2").click();
+    };
+  </script>

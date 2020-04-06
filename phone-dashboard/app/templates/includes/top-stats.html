@@ -1,0 +1,170 @@
+
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Anrufe</h5>
+
+                      <span id="stats_traffic" class="h2 font-weight-bold mb-0">Angenommen</span>
+
+                    </div>
+                    <div class="col-auto">
+                      <!--<div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>-->
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted">
+                    <span class="text-nowrap">Diesen Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["received"]["current"] }}</span>
+                  </p>
+                  <hr class="hr-lowmargin">
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-nowrap">Letzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["received"]["previous"] }}</span>
+                    <span class="text-nowrap">Vorletzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["received"]["penultimate"] }}</span>
+                    <br>
+                    <span class="text-nowrap mr-2">Veränderung: </span>
+                      {% if top_monthly["received"]["change"] >= 0 %}
+                        <span class="text-success mr-2">
+                        <i class="fa fa-arrow-up"></i>
+                      {% else %}
+                        <span class="text-warning mr-2">
+                        <i class="fa fa-arrow-down"></i>
+                      {% endif %}
+                    {{ top_monthly["received"]["change"] }}%</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Anrufe</h5>
+
+                      <span id="stats_sales" class="h2 font-weight-bold mb-0">Verpasst</span>
+
+                    </div>
+                    <div class="col-auto">
+                      <!--<div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>-->
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted">
+                    <span class="text-nowrap">Diesen Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["missed"]["current"] }}</span>
+                  </p>
+                  <hr class="hr-lowmargin">
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-nowrap">Letzten Monat:</span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["missed"]["previous"] }}</span>
+                    <span class="text-nowrap">Vorletzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["missed"]["penultimate"] }}</span>
+                    <br>
+                    <span class="text-nowrap mr-2">Veränderung: </span>
+                      {% if top_monthly["missed"]["change"] >= 0 %}
+                        <span class="text-warning mr-2">
+                        <i class="fa fa-arrow-up"></i>
+                      {% else %}
+                        <span class="text-success mr-2">
+                        <i class="fa fa-arrow-down"></i>
+                      {% endif %}
+                    {{ top_monthly["missed"]["change"] }}%</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Anrufe</h5>
+
+                      <span id="stats_users" class="h2 font-weight-bold mb-0">Gewählt</span>
+
+                    </div>
+                    <div class="col-auto">
+                      <!--<div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>-->
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted">
+                    <span class="text-nowrap">Diesen Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["dialed"]["current"] }}</span>
+                  </p>
+                  <hr class="hr-lowmargin">
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-nowrap">Letzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["dialed"]["previous"] }}</span>
+                    <span class="text-nowrap">Vorletzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["dialed"]["penultimate"] }}</span>
+                    <br>
+                    <span class="text-nowrap mr-2">Veränderung: </span>
+                      {% if top_monthly["dialed"]["change"] >= 0 %}
+                        <span class="text-success mr-2">
+                        <i class="fa fa-arrow-up"></i>
+                      {% else %}
+                        <span class="text-warning mr-2">
+                        <i class="fa fa-arrow-down"></i>
+                      {% endif %}
+                    {{ top_monthly["dialed"]["change"] }}%</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Anrufe</h5>
+
+                      <span id="stats_perf" class="h2 font-weight-bold mb-0">Überblick</span>
+
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-percent"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted">
+                    <span class="text-nowrap">Diesen Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["summary"]["current"] }}</span>
+                  </p>
+                  <hr class="hr-lowmargin">
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-nowrap">Letzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["summary"]["previous"] }}</span>
+                    <span class="text-nowrap">Vorletzten Monat: </span>
+                    <span class="text-success mr-2"><i></i>{{ top_monthly["summary"]["penultimate"] }}</span>
+                    <br>
+                    <span class="text-nowrap mr-2">Veränderung: </span>
+                      {% if top_monthly["summary"]["change"] >= 0 %}
+                        <span class="text-success mr-2">
+                        <i class="fa fa-arrow-up"></i>
+                      {% else %}
+                        <span class="text-warning mr-2">
+                        <i class="fa fa-arrow-down"></i>
+                      {% endif %}
+                    {{ top_monthly["summary"]["change"] }}%</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
